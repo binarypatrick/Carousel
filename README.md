@@ -8,6 +8,6 @@ Once this is configured, run the following:
 docker compose up -d --build
 ```
 
-This will build the dockerfile and stand up the webapp. You should be able to access it in any web browser at `http://localhost:8080`
+This will build the dockerfile and stand up the webapp. You should be able to access it in any web browser at [localhost:8080](http://localhost:8080).
 
 Photos are rotated through randomly, and the `date taken` EXIF field is used to display the datestamp.
