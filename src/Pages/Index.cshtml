@@ -1,0 +1,24 @@
+﻿@page
+@model PhotoCarousel.Pages.IndexModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carousel</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+</head>
+    <body>
+        <div id="carousel-a" class="carousel"></div>
+        <div id="carousel-b" class="carousel"></div>
+        <div id="carousel-c" class="carousel"></div>
+
+        <script>
+            let metadata = @Html.Raw(Model.Metadata);
+        </script>
+
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </body>
+</html>

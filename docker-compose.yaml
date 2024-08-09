@@ -1,0 +1,16 @@
+services:
+  app:
+    container_name: carousel-app
+    build:
+      context: ./src
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ${PHOTOS_DIRECTORY}:/app/wwwroot/img
+    networks:
+      - carousel
+
+networks:
+  carousel:
+    driver: bridge
