@@ -1,5 +1,4 @@
-﻿let aspectRatio;
-let index = 0;
+﻿let index = 0;
 
 let outgoing = document.getElementById("carousel-a");
 let active = document.getElementById("carousel-b");
@@ -9,6 +8,7 @@ addImageToCarousel();
 setInterval(addImageToCarousel, 10000);
 
 function addImageToCarousel() {
+    console.log("index: ", index);
     const currentMetadata = metadata[index];
 
     const shuffler = outgoing;
@@ -21,14 +21,14 @@ function addImageToCarousel() {
     outgoing.classList = "carousel outgoing";
 
     // prepare upcoming
-    aspectRatio = window.innerWidth / window.innerHeight;
     const background = createBackgroundElement(currentMetadata.filename)
     const foreground = createForegroundImage(currentMetadata.filename);
     const datestamp = createDatestamp(currentMetadata.datestamp);
     upcoming.replaceChildren(background, foreground, datestamp);
 
     index++;
-    if (index > metadata.length) {
+    if (index >= metadata.length) {
+        console.log("resetting index");
         index = 0;
     }
 
